@@ -36,21 +36,20 @@ def ColorCode():
 
 def Display(res_colors, first_three, tolerance):
 
-    print(first_three/1000)
     res = first_three
     #If blocks for large resistance values
-    if first_three >= 1000000: # If value is in mega ohms
-        res = str(first_three/1000000.0) + " M"
-    elif first_three >= 1000: # If value is in kilo ohms
-        res = str(first_three/1000.0) + " K"
+    if res >= 1000000.0: # If value is in mega ohms
+        res = str(res/1000000.0) + " M"
+    elif res >= 1000.0: # If value is in kilo ohms
+        res = str(res/1000.0) + " K"
 
     #If blocks for tolerance band
     if res_colors[3] == "gold":
-        res += "Ω ± " + tolerance[0]
+        res = str(res) + "Ω ± " + tolerance[0]
     elif res_colors[3] == "silver":
-        res += "Ω ± " + tolerance[1]
+        res = str(res) + "Ω ± " + tolerance[1]
     else:
-        res = str(first_three) + " Ω ± " + tolerance[2]
+        res = str(res) + " Ω ± " + tolerance[2]
 
     message = "Resistance = " + str(res)
     title = "Result"
