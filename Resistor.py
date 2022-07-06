@@ -3,7 +3,7 @@
 
 Resistor Color Coding Program for 4 band(v1.0):
 1. Enter 4 band colors
-2. Receive resistor value.
+2. Receive resistor value
 """
 
 from easygui import *
